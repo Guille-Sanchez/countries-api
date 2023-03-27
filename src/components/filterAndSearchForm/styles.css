@@ -1,0 +1,51 @@
+.filter-by-region {
+  background-color: var(--dark-blue-DM);
+  border-color: transparent;
+  border-radius: 5px;
+  border-right-width: 20px;
+  color: var(--very-Light-Gray);
+  padding: 15px 0 15px 20px;
+  width: 50%;
+}
+
+.form-filter-search {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: var(--lr-padding);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--very-Light-Gray);
+  opacity: 0.9; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--very-Light-Gray);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--very-Light-Gray);
+}
+
+.search-country {
+  display: flex;
+  gap: 0;
+}
+
+.search-country > * {
+  background-color: var(--dark-blue-DM);
+  border: transparent;
+}
+
+.search-country button {
+  border-radius: 5px 0 0 5px;
+  padding-left: 30px;
+}
+
+.search-country input {
+  border-radius: 0 5px 5px 0;
+  margin: 0;
+  padding: 20px 0 20px 15px;
+  width: 100%;
+}

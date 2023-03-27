@@ -1,0 +1,25 @@
+.country-card {
+  background-color: var(--dark-blue-DM);
+  border-radius: 5px;
+  color: var(--very-Light-Gray);
+  padding-bottom: var(--tb-padding);
+}
+
+.country-card > img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.country-card p {
+  padding: 0 var(--lr-padding);
+}
+
+.country-card .description p:first-child {
+  font-weight: 900;
+  font-size: 20px;
+  color: white;
+}
+
+.country-card span {
+  font-weight: 800;
+}

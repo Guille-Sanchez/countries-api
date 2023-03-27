@@ -1,0 +1,17 @@
+.countries-container {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 280px));
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  max-width: 1440px;
+  padding: var(--tb-padding) 0 0 0;
+  width: 100%;
+}
+
+.countries-justify {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

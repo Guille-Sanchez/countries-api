@@ -1,0 +1,27 @@
+.header-dark-mode {
+  align-items: center;
+  background-color: var(--dark-blue-DM);
+  color: var(--very-Light-Gray);
+  display: flex;
+  font-size: 10px !important;
+  justify-content: space-between;
+  padding: var(--tb-padding) var(--lr-padding);
+}
+
+.toggle-dark-light-mode {
+  display: flex;
+}
+
+.toggle-dark-light-mode button {
+  background-color: inherit;
+  border: transparent;
+}
+
+.toggle-dark-light-mode button:hover {
+  cursor: pointer;
+}
+
+.toggle-dark-light-mode p {
+  font-size: 14px;
+  font-weight: 600;
+}

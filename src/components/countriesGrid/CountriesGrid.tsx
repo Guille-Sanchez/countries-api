@@ -1,11 +1,16 @@
+import { type Country } from '../../types'
 import { CountryCard } from '../countryCard/CountryCard'
 import './styles.css'
 
-export const CountriesGrid = (): JSX.Element => {
+interface Props {
+  countries: Country | null
+}
+
+export const CountriesGrid = ({ countries }: Props): JSX.Element => {
   return (
     <section className='countries-justify'>
       <ul className='countries-container'>
-        <CountryCard />
+        <CountryCard countries={countries}/>
       </ul>
     </section>
   )

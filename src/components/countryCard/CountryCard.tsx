@@ -1,11 +1,15 @@
-import countries from '../../mockups/data.json'
+import { type Country } from '../../types'
 import './styles.css'
 
-export const CountryCard = (): JSX.Element => {
+interface Props {
+  countries: Country | null
+}
+
+export const CountryCard = ({ countries }: Props): JSX.Element => {
   return (
     <>
       {
-        countries.map((country) => {
+        countries?.map((country) => {
           return (
             <li key={country.name} className='country-card'>
               <img src={country.flags.png} alt={country.name} />

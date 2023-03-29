@@ -1,4 +1,4 @@
-.header-dark-mode {
+.header {
   align-items: center;
   background-color: var(--dark-blue-DM);
   color: var(--very-Light-Gray);
@@ -8,20 +8,37 @@
   padding: var(--tb-padding) var(--lr-padding);
 }
 
-.toggle-dark-light-mode {
-  display: flex;
+.header-dark-mode {
+  background-color: var(--dark-blue-DM);
+  color: var(--very-Light-Gray);
 }
 
-.toggle-dark-light-mode button {
+.header-light-mode {
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+}
+
+.toggle-dark-light-mode {
+  align-items: center;
   background-color: inherit;
   border: transparent;
+  display: flex;
+  gap: 10px;
 }
 
-.toggle-dark-light-mode button:hover {
+.toggle-dark-light-mode {
   cursor: pointer;
 }
 
 .toggle-dark-light-mode p {
   font-size: 14px;
   font-weight: 600;
+}
+
+.header-dark-mode .toggle-dark-light-mode p {
+  color: var(--very-Light-Gray);
+}
+
+.header-light-mode .toggle-dark-light-mode p {
+  color: var(--very-dark-blue);
 }

@@ -1,5 +1,12 @@
 .App {
-  background-color: var(--very-dark-blue-DM);
   height: 100%;
   width: 100%;
+}
+
+.App-Dark {
+  background-color: var(--very-dark-blue-DM);
+}
+
+.App-Light {
+  background-color: var(--very-Light-Gray);
 }

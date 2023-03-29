@@ -12,10 +12,6 @@ export const onChangeSearchCountry = ({ e, originalCountries, setSearchCountry }
   const userSearch = e.target.value.toLowerCase().split('')
   setSearchCountry(() => e.target.value)
 
-  if (e.target.value === '' && (originalCountries !== null)) {
-    return ([...originalCountries])
-  }
-
   const filteredCountries = originalCountries?.filter((country) => {
     const countryName = country.name.toLowerCase()
     return userSearch.every((letter, index) => letter === countryName[index])

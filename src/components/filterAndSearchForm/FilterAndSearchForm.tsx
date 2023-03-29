@@ -9,6 +9,7 @@ import { onChangeSearchCountry } from '../../logic/onChangeSearchCountry'
 interface Props {
   setCountries: React.Dispatch<React.SetStateAction<Country | null>>
 }
+
 export const FilterAndSearchForm = ({ setCountries }: Props): JSX.Element => {
   const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'] as const
   const [searchCountry, setSearchCountry] = useState('')
@@ -17,7 +18,11 @@ export const FilterAndSearchForm = ({ setCountries }: Props): JSX.Element => {
   return (
     <section className='form-filter-search'>
       <form className='search-country'
-        onSubmit={(e) => { handleOnSubmit({ e, setSearchCountry, setCountries, originalCountries }) }}
+        onSubmit={(e) => {
+          const { newCountries } = handleOnSubmit({ e, originalCountries })
+          setCountries(() => newCountries)
+          setSearchCountry(() => '')
+        }}
       >
         <button aria-label='search country'>
           <IconMagnifyingGlass fill='#FFFFFF'/>
@@ -26,8 +31,14 @@ export const FilterAndSearchForm = ({ setCountries }: Props): JSX.Element => {
           name='search-country'
           type="text"
           placeholder='Search for a country...'
+          autoComplete='off'
           value={searchCountry}
-          onChange={(e) => { onChangeSearchCountry({ e, originalCountries, setCountries, setSearchCountry }) }}
+          onChange={(e) => {
+            const countriesAfterSearch = onChangeSearchCountry({ e, originalCountries, setSearchCountry })
+            if (countriesAfterSearch !== null) {
+              setCountries(() => countriesAfterSearch)
+            }
+          }}
         />
       </form>
 
@@ -35,7 +46,12 @@ export const FilterAndSearchForm = ({ setCountries }: Props): JSX.Element => {
         <select
           name="filter-by-region"
           className='filter-by-region'
-          onChange={(e) => { filterByRegion({ e, originalCountries, setCountries }) }}
+          onChange={(e) => {
+            const filteredCountries = filterByRegion({ e, originalCountries })
+            if (filteredCountries !== null) {
+              setCountries(() => filteredCountries)
+            }
+          }}
         >
           <option value='all'>Filter by Region</option>
           {

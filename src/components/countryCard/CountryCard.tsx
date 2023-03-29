@@ -12,7 +12,7 @@ export const CountryCard = ({ countries }: Props): JSX.Element => {
         countries?.map((country) => {
           return (
             <li key={country.name} className='country-card'>
-              <img src={country.flags.png} alt={country.name} />
+              <img src={country.flags.png} alt={country.name} loading='lazy'/>
               <div className='description'>
                 <p>{country.name}</p>
                 <p><span>Population: </span>{country.population.toLocaleString('en-US')}</p>

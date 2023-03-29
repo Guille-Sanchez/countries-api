@@ -3,30 +3,23 @@ import { type Country } from '../types'
 interface Props {
   e: React.ChangeEvent<HTMLInputElement>
   setSearchCountry: React.Dispatch<React.SetStateAction<string>>
-  setCountries: React.Dispatch<React.SetStateAction<Country | null>>
   originalCountries: Country | null
 }
-export const onChangeSearchCountry = ({ e, originalCountries, setCountries, setSearchCountry }: Props): void => {
-  if (e.target.value === ' ') return
-  if (e.target.value === '' && (originalCountries != null)) {
-    setCountries([...originalCountries])
-    setSearchCountry(() => e.target.value)
-    return
-  }
+
+export const onChangeSearchCountry = ({ e, originalCountries, setSearchCountry }: Props): Country | null => {
+  if (e.target.value === ' ' && e.target.value.length === 1) return null // Here can be added other type of validations
+
+  const userSearch = e.target.value.toLowerCase().split('')
   setSearchCountry(() => e.target.value)
 
-  const arraySearch = e.target.value.toLowerCase().split('')
-  const filteredCountries = originalCountries
-    ?.filter((country) => {
-      const countryName = country.name.toLowerCase()
-      const temp = arraySearch.map((letter, index) => {
-        return letter === countryName[index]
-      })
+  if (e.target.value === '' && (originalCountries !== null)) {
+    return ([...originalCountries])
+  }
 
-      const newTemp = [...new Set(temp)]
-      if (newTemp.length === 2 || !newTemp[0]) return false
-      return true
-    }) ?? null
+  const filteredCountries = originalCountries?.filter((country) => {
+    const countryName = country.name.toLowerCase()
+    return userSearch.every((letter, index) => letter === countryName[index])
+  }) ?? null
 
-  if (filteredCountries !== null) setCountries([...filteredCountries])
+  return filteredCountries !== null ? [...filteredCountries] : null
 }

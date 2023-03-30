@@ -1,8 +1,17 @@
 .country-card {
-  background-color: var(--dark-blue-DM);
   border-radius: 5px;
-  color: var(--very-Light-Gray);
   padding-bottom: var(--tb-padding);
+}
+
+.country-card.dark-mode {
+  background-color: var(--dark-blue-DM);
+  color: var(--very-Light-Gray);
+}
+
+.country-card.light-mode {
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.1);
 }
 
 .country-card > img {
@@ -17,7 +26,15 @@
 .country-card .description p:first-child {
   font-weight: 900;
   font-size: 20px;
-  color: white;
+  color: var(--white);
+}
+
+.country-card.dark-mode .description p:first-child {
+  color: var(--white);
+}
+
+.country-card.country-card.light-mode .description p:first-child {
+  color: var(--very-dark-blue);
 }
 
 .country-card span {

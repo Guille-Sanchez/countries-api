@@ -14,6 +14,13 @@
   border-right-width: 20px;
   padding: 15px 0 15px 20px;
   width: 50%;
+  border-color: transparent;
+}
+
+.filter-by-region.light-mode {
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.1);
+  background-color: var(--white);
+  color: var(--dark-blue-DM);
 }
 
 .form-filter-search {
@@ -27,17 +34,18 @@
   border-left: transparent;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.form-filter-search input.light-mode > *{
+  border: transparent;
+}
+
+.dark-mode ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--very-Light-Gray);
   opacity: 0.9; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: var(--very-Light-Gray);
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: var(--very-Light-Gray);
+.light-mode ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--dark-greay);
+  opacity: 0.9; /* Firefox */
 }
 
 .search-country {
@@ -48,13 +56,13 @@
 
 .search-country.dark-mode > * {
   background-color: var(--dark-blue-DM);
-  color: var(--very-Light-Gray);
   border: transparent;
+  color: var(--very-Light-Gray);
 }
 
 .search-country.light-mode > * {
   background-color: var(--white);
-  border-color: transparent;
+  border: transparent;
   color: var(--dark-greay);
 }
 

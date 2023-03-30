@@ -1,6 +1,7 @@
 .countries-container {
   display: grid;
   gap: 40px;
+  height: 100%;
   grid-template-columns: repeat(auto-fill, minmax(250px, 280px));
   justify-content: center;
   list-style: none;

@@ -1,17 +1,20 @@
+import { useContext } from 'react'
+import { DarkModeContext } from '../../context/DarkMode'
 import { type Country } from '../../types'
 import './styles.css'
 
 interface Props {
-  countries: Country | null
+  gridCountries: Country | null
 }
 
-export const CountryCard = ({ countries }: Props): JSX.Element => {
+export const CountryCard = ({ gridCountries }: Props): JSX.Element => {
+  const { darkMode } = useContext(DarkModeContext)
   return (
     <>
       {
-        countries?.map((country) => {
+        gridCountries?.map((country) => {
           return (
-            <li key={country.name} className='country-card'>
+            <li key={country.name} className={`country-card ${darkMode ? 'dark-mode' : 'light-mode'}`}>
               <img src={country.flags.png} alt={country.name} loading='lazy'/>
               <div className='description'>
                 <p>{country.name}</p>

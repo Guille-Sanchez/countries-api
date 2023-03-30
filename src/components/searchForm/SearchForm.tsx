@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { IconMagnifyingGlass } from '../../assets/icons'
 import { DarkModeContext } from '../../context/DarkMode'
-// import { useCountries } from '../../hooks/useCountries'
 import { handleOnSubmit } from '../../logic/handleOnSubmit'
 import { onChangeSearchCountry } from '../../logic/onChangeSearchCountry'
 import { type Country } from '../../types'
+import './styles.css'
 
 interface Props {
   setCountries: React.Dispatch<React.SetStateAction<Country | null>>
@@ -12,8 +12,6 @@ interface Props {
 }
 
 export const SearchForm = ({ setCountries, originalCountries }: Props): JSX.Element => {
-  // const { originalCountries } = useCountries({ setCountries })
-  // const { originalCountries } = useCountries()
   const { darkMode } = useContext(DarkModeContext)
   const [searchCountry, setSearchCountry] = useState('')
 

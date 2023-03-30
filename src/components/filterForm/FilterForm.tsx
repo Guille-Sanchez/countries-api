@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
 import { DarkModeContext } from '../../context/DarkMode'
-// import { useCountries } from '../../hooks/useCountries'
 import { filterByRegion } from '../../logic/filterByRegion'
 import { type Country } from '../../types'
-
+import './styles.css'
 interface Props {
   setCountries: React.Dispatch<React.SetStateAction<Country | null>>
   originalCountries: Country | null
@@ -12,8 +11,6 @@ interface Props {
 export const FilterForm = ({ setCountries, originalCountries }: Props): JSX.Element => {
   const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'] as const
   const { darkMode } = useContext(DarkModeContext)
-  // const { originalCountries } = useCountries({ setCountries })
-  // const { originalCountries } = useCountries()
 
   return (
     <form>

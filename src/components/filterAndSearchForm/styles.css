@@ -8,76 +8,9 @@
   color: var(--dark-greay);
 }
 
-.filter-by-region {
-  border-color: transparent;
-  border-radius: 5px;
-  border-right-width: 20px;
-  padding: 15px 0 15px 20px;
-  width: 50%;
-  border-color: transparent;
-}
-
-.filter-by-region.light-mode {
-  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.1);
-  background-color: var(--white);
-  color: var(--dark-blue-DM);
-}
-
 .form-filter-search {
   display: flex;
   flex-direction: column;
   gap: 40px;
   padding: var(--lr-padding);
-}
-
-.form-filter-search input.light-mode {
-  border-left: transparent;
-}
-
-.form-filter-search input.light-mode > *{
-  border: transparent;
-}
-
-.dark-mode ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: var(--very-Light-Gray);
-  opacity: 0.9; /* Firefox */
-}
-
-.light-mode ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: var(--dark-greay);
-  opacity: 0.9; /* Firefox */
-}
-
-.search-country {
-  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.1);
-  display: flex;
-  gap: 0;
-}
-
-.search-country.dark-mode > * {
-  background-color: var(--dark-blue-DM);
-  border: transparent;
-  color: var(--very-Light-Gray);
-}
-
-.search-country.light-mode > * {
-  background-color: var(--white);
-  border: transparent;
-  color: var(--dark-greay);
-}
-
-.search-country button {
-  border-radius: 5px 0 0 5px;
-  padding-left: 30px;
-}
-
-.search-country button.light-mode {
-  border-right: transparent;
-}
-
-.search-country input {
-  border-radius: 0 5px 5px 0;
-  margin: 0;
-  padding: 20px 0 20px 15px;
-  width: 100%;
 }

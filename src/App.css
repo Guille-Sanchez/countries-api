@@ -10,3 +10,7 @@
 .App-Light {
   background-color: var(--very-Light-Gray);
 }
+
+main {
+  position: relative;
+}

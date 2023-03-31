@@ -13,7 +13,7 @@ export const CountriesGrid = ({ countries, originalCountries }: Props): JSX.Elem
   return (
     <section className='countries-justify'>
       <ul className='countries-container'>
-        <CountryCard gridCountries={gridCountries}/>
+        <CountryCard gridCountries={gridCountries} />
       </ul>
     </section>
   )

@@ -1,0 +1,31 @@
+.country-modal-container {
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding: var(--lr-padding);
+  width: 100%;
+  color: var(--white);
+}
+
+.country-modal-wrapper > img {
+  border-radius: 5px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.country-modal-wrapper .country-name {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.country-modal-container.dark-mode {
+  background-color: var(--dark-blue-DM);
+  color: var(--very-Light-Gray);
+}
+
+.country-modal-container.light-mode {
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.1);
+}

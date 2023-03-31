@@ -16,11 +16,13 @@
 
 .country-card > img {
   border-radius: 5px;
+  height: 180px;
+  object-fit: cover;
   width: 100%;
 }
 
 .country-card p {
-  padding: 0 var(--lr-padding);
+  padding: 0 20px;
 }
 
 .country-card .description p:first-child {

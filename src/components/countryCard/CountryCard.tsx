@@ -14,7 +14,7 @@ export const CountryCard = ({ gridCountries }: Props): JSX.Element => {
       {
         gridCountries?.map((country) => {
           return (
-            <li key={country.name} className={`country-card ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+            <li key={country.name} className={`country-card ${darkMode ? 'dark-mode' : 'light-mode'}`} onClick={() => { console.log(country.name) }}>
               <img src={country.flags.png} alt={country.name} loading='lazy'/>
               <div className='description'>
                 <p>{country.name}</p>

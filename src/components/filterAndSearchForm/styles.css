@@ -9,8 +9,15 @@
 }
 
 .form-filter-search {
-  display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
+  display: grid;
   gap: 40px;
-  padding: var(--lr-padding);
+  padding: 30px var(--lr-padding);
+  width: 100%;
+}
+
+@media (min-width: 450px) {
+  .form-filter-search {
+    grid-template-columns: 1.5fr 1fr;
+  }
 }

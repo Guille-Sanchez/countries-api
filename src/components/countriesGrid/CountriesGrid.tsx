@@ -1,9 +1,9 @@
-import { type Country } from '../../types'
+import { type originalCountriesType } from '../../types'
 import { CountryCard } from '../countryCard/CountryCard'
 import './styles.css'
 
 interface Props {
-  countries: Country | null
+  countries: originalCountriesType
 }
 
 export const CountriesGrid = ({ countries }: Props): JSX.Element => {

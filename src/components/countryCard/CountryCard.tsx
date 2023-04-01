@@ -1,12 +1,12 @@
 import { useContext } from 'react'
 import { DarkModeContext } from '../../context/DarkMode'
-import { type Country } from '../../types'
+import { type originalCountriesType } from '../../types'
 import './styles.css'
 import { Link } from 'react-router-dom'
 import { originalCountriesContext } from '../../context/OriginalCountry'
 
 interface Props {
-  countries: Country | null
+  countries: originalCountriesType
 }
 
 export const CountryCard = ({ countries }: Props): JSX.Element => {

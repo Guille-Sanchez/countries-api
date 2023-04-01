@@ -14,10 +14,8 @@ export const useCountries = (): returnProps => {
   useEffect(() => {
     let subscribed = true
     if (subscribed) {
-      // Get Countries from API
       const formattedCountries = formatCountries({ countries })
-      console.log(formattedCountries)
-      setOriginalCountries(() => [...countries])
+      setOriginalCountries(() => formattedCountries)
       setLoading(false)
     }
     return () => {

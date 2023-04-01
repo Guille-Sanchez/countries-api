@@ -1,12 +1,12 @@
-import { type Country } from '../types'
+import { type originalCountriesType } from '../types'
 
 interface Props {
   e: React.ChangeEvent<HTMLInputElement>
   setSearchCountry: React.Dispatch<React.SetStateAction<string>>
-  originalCountries: Country | null
+  originalCountries: originalCountriesType
 }
 
-export const onChangeSearchCountry = ({ e, originalCountries, setSearchCountry }: Props): Country | null => {
+export const onChangeSearchCountry = ({ e, originalCountries, setSearchCountry }: Props): originalCountriesType => {
   if (e.target.value === ' ' && e.target.value.length === 1) return null // Here can be added other type of validations
 
   const userSearch = e.target.value.toLowerCase().split('')

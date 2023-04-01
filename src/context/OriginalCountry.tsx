@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { type Country } from '../types'
+import { type originalCountriesType } from '../types'
 
 const initialState = {
   originalCountries: null,
@@ -7,8 +7,8 @@ const initialState = {
 }
 
 interface originalCountriesContextTypes {
-  originalCountries: Country | null
-  setOriginalCountries: React.Dispatch<React.SetStateAction<Country | null>>
+  originalCountries: originalCountriesType
+  setOriginalCountries: React.Dispatch<React.SetStateAction<originalCountriesType>>
 }
 
 interface Props {
@@ -18,7 +18,7 @@ interface Props {
 export const originalCountriesContext = createContext<originalCountriesContextTypes>(initialState)
 
 export const OriginalCountries = ({ children }: Props): JSX.Element => {
-  const [originalCountries, setOriginalCountries] = useState<Country | null>(null)
+  const [originalCountries, setOriginalCountries] = useState<originalCountriesType>(null)
 
   return (
     <originalCountriesContext.Provider value={{ originalCountries, setOriginalCountries }}>

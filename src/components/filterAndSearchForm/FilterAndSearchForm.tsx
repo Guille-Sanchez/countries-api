@@ -1,9 +1,9 @@
 import './styles.css'
-import { type Country } from '../../types'
+import { type originalCountriesType } from '../../types'
 import { FilterForm } from '../filterForm/FilterForm'
 import { SearchForm } from '../searchForm/SearchForm'
 interface Props {
-  setCountries: React.Dispatch<React.SetStateAction<Country | null>>
+  setCountries: React.Dispatch<React.SetStateAction<originalCountriesType>>
 }
 
 export const FilterAndSearchForm = ({ setCountries }: Props): JSX.Element => {

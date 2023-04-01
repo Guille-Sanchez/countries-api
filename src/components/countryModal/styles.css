@@ -1,10 +1,20 @@
-.back-button, .countries-button {
+.back-button {
   align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.back-button {
   border: transparent;
   border-radius: 2px;
   box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
   margin: 40px calc(var(--lr-padding) + 10px );
   padding: 10px 25px;
+}
+
+.country-modal-card {
+  display: flex;
+  flex-direction: column;
 }
 
 .back-button a {
@@ -19,45 +29,58 @@
   color: var(--very-dark-blue)
 }
 
-
-.countries-border-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 100%;
-}
-
-.countries-border-container button {
-  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.1);
-  font-size: 10px;
-  margin: 0;
-  padding: 5px 25px;
-}
-
-.country-modal-container, .country-modal-flag {
+.country-modal-container {
   box-sizing: border-box;
-  border-radius: 5px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   padding: 10px calc(var(--lr-padding) + 10px );
   width: 100%;
   color: var(--very-Light-Gray);
 }
 
+.country-modal-flag {
+  box-sizing: border-box;
+  padding: 0 calc(var(--lr-padding) + 10px );
+  width: 100%;
+}
+
 .country-modal-flag > img {
-  height: 250px;
+  max-height: 250px;
   border-radius: 5px;
   object-fit: cover;
   width: 100%;
 }
 
-.country-modal-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+
+@media (min-width: 550px) {
+
+  .country-modal-flag {
+    padding-right: 0;
+    width: 100%;
+    align-self: center;
+  }
+
+  .country-modal-flag > img {
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .country-modal-card {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .country-modal-container {
+    padding-left: 0;
+  }
+
 }
 
-.country-modal-wrapper .country-name {
+
+
+.country-name {
   font-size: 24px;
   font-weight: 900;
 }
@@ -70,13 +93,7 @@
   list-style: none;
 }
 
-.display-in-line p, .display-in-line ul, .display-in-line li{
-  display: inline;
-}
 
-.display-in-line {
-  margin: 16px 0;
-}
 
 .country-modal-container.dark-mode {
   background-color: var(--dark-blue-DM);

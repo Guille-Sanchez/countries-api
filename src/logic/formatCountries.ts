@@ -1,58 +1,19 @@
-import { type Countries, type Country } from '../types'
+import { type originalCountriesType, type Countries, type Country } from '../types'
 
 interface Props {
   countries: Country | null
-}
-
-interface originalCountry {
-  alpha3Code: string
-  name: string
-  population: number
-  region: string
-  capital: string | undefined
-  nativeName: string
-  subregion: string
-  topLevelDomain: string[]
-  currencies: Currency[] | undefined
-  languages: Language[]
-  borders: string[] | null
-  flags: Flags
-}
-
-export type originalCountriesType = originalCountry[] | null
-
-interface returnProps {
-  originalCountries: originalCountriesType
-}
-
-export interface Flags {
-  svg: string
-  png: string
-}
-
-export interface Currency {
-  code: string
-  name: string
-  symbol: string
-}
-
-export interface Language {
-  iso639_1?: string
-  iso639_2: string
-  name: string
-  nativeName?: string
 }
 
 interface formatBordersInterface {
   country: Countries
 }
 
-export const formatCountries = ({ countries }: Props): returnProps => {
+export const formatCountries = ({ countries }: Props): originalCountriesType => {
   const formatBorders = ({ country }: formatBordersInterface): string[] | null => {
     const borders = country.borders
 
     if (borders === null) return null
-    const borderCountry: string[] = []
+    const borderCountry: string[] | null = []
 
     borders?.forEach((border) => {
       countries?.forEach((rawCountry) => {
@@ -63,7 +24,7 @@ export const formatCountries = ({ countries }: Props): returnProps => {
       })
     })
 
-    return borderCountry
+    return borderCountry.length > 0 ? borderCountry : null
   }
 
   const originalCountries = countries?.map((country) => {
@@ -86,5 +47,5 @@ export const formatCountries = ({ countries }: Props): returnProps => {
     )
   }) ?? null
 
-  return ({ originalCountries })
+  return (originalCountries)
 }

@@ -1,11 +1,11 @@
-import { type Country } from '../types'
+import { type originalCountriesType } from '../types'
 
 interface Props {
   e: React.ChangeEvent<HTMLSelectElement>
-  originalCountries: Country | null
+  originalCountries: originalCountriesType
 }
 
-export const filterByRegion = ({ e, originalCountries }: Props): Country | null => {
+export const filterByRegion = ({ e, originalCountries }: Props): originalCountriesType => {
   const filteredCountries = originalCountries
     ?.filter((country) => {
       return (country.region === e.target.value || e.target.value === 'all')

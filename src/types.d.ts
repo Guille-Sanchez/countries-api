@@ -67,3 +67,22 @@ export interface RegionalBloc {
   otherNames?: string[]
   otherAcronyms?: string[]
 }
+
+/* Formatting API */
+
+interface originalCountry {
+  alpha3Code: string
+  name: string
+  population: number
+  region: string
+  capital: string | undefined
+  nativeName: string
+  subregion: string
+  topLevelDomain: string[]
+  currencies: Currency[] | undefined
+  languages: Language[]
+  borders: string[] | null
+  flags: Flags
+}
+
+export type originalCountriesType = originalCountry[] | null

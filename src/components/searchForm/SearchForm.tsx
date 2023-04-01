@@ -4,11 +4,11 @@ import { DarkModeContext } from '../../context/DarkMode'
 import { originalCountriesContext } from '../../context/OriginalCountry'
 import { handleOnSubmit } from '../../logic/handleOnSubmit'
 import { onChangeSearchCountry } from '../../logic/onChangeSearchCountry'
-import { type Country } from '../../types'
+import { type originalCountriesType } from '../../types'
 import './styles.css'
 
 interface Props {
-  setCountries: React.Dispatch<React.SetStateAction<Country | null>>
+  setCountries: React.Dispatch<React.SetStateAction<originalCountriesType>>
 }
 
 export const SearchForm = ({ setCountries }: Props): JSX.Element => {

@@ -1,13 +1,13 @@
 import type React from 'react'
-import { type Country } from '../types'
+import { type originalCountriesType } from '../types'
 
 interface Props {
   e: React.FormEvent<HTMLFormElement>
-  originalCountries: Country | null
+  originalCountries: originalCountriesType
 }
 
 interface returnProps {
-  newCountries: Country | null
+  newCountries: originalCountriesType
 }
 
 export const handleOnSubmit = ({ e, originalCountries }: Props): returnProps => {

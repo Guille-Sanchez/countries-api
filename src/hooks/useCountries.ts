@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { originalCountriesContext } from '../context/OriginalCountry'
+import { formatCountries } from '../logic/formatCountries'
 import countries from '../mockups/data.json'
 
 interface returnProps {
@@ -13,6 +14,9 @@ export const useCountries = (): returnProps => {
   useEffect(() => {
     let subscribed = true
     if (subscribed) {
+      // Get Countries from API
+      const formattedCountries = formatCountries({ countries })
+      console.log(formattedCountries)
       setOriginalCountries(() => [...countries])
       setLoading(false)
     }

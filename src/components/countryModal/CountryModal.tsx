@@ -1,14 +1,14 @@
+import { useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { type Country } from '../../types'
+import IconArrowLeft from '../../assets/icons'
+import { DarkModeContext } from '../../context/DarkMode'
+import { originalCountriesContext } from '../../context/OriginalCountry'
 import './styles.css'
 
-interface Props {
-  originalCountries: Country | null
-}
-
-export const CountryModal = ({ originalCountries }: Props): JSX.Element => {
+export const CountryModal = (): JSX.Element => {
+  const { darkMode } = useContext(DarkModeContext)
+  const { originalCountries } = useContext(originalCountriesContext)
   const { country } = useParams()
-
   if (country === undefined) return <p>Sorry an error has occured</p>
 
   const countryModal = originalCountries?.filter((originalCountry) => {
@@ -19,14 +19,19 @@ export const CountryModal = ({ originalCountries }: Props): JSX.Element => {
 
   return (
     <>
-      <button>
-      <Link to='/'>Back</Link>
+      <button className={`back-button ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+        <IconArrowLeft/>
+        <Link to='/'>Back</Link>
       </button>
-      <div className='country-modal-container'>
-        <div className='country-modal-wrapper'>
+
+      <article className='country-modal-container'>
+        <section aria-labelledby='country-name' className='country-modal-wrapper'>
           <img src={countryModal.flags.png} alt={countryModal.name} />
+
           <div>
-            <p className='country-name'> {countryModal.name}</p>
+            <header>
+              <h1 id='country-name:' className='country-name'> {countryModal.name}</h1>
+            </header>
             <p><span>Native Name:</span> {countryModal.nativeName}</p>
             <p><span>Population:</span> {countryModal.population}</p>
             <p><span>Region:</span> {countryModal.region}</p>
@@ -36,7 +41,8 @@ export const CountryModal = ({ originalCountries }: Props): JSX.Element => {
 
           <div>
             <p><span>Top Level Domain:</span> {countryModal.topLevelDomain}</p>
-            <p><span>Currencies:</span>
+            <div>
+              <p><span>Currencies:</span></p>
               <ul>
                 {countryModal.currencies?.map((currency) => {
                   return (
@@ -44,8 +50,10 @@ export const CountryModal = ({ originalCountries }: Props): JSX.Element => {
                   )
                 })}
               </ul>
-            </p>
-            <p><span>Languages:</span>
+            </div>
+
+            <div>
+              <p><span>Languages:</span></p>
               <ul>
                 {countryModal.languages?.map((language) => {
                   return (
@@ -53,23 +61,27 @@ export const CountryModal = ({ originalCountries }: Props): JSX.Element => {
                   )
                 })}
               </ul>
-            </p>
+            </div>
           </div>
 
-          <h3>Border Countries:</h3>
+          <section aria-labelledby='border-countries'>
+            <header>
+              <h3 id='border-countries'>Border Countries:</h3>
+            </header>
             <ul>
               {
                 countryModal.borders?.map((border) => {
                   return (
-                    <li key={countryModal.name}>
+                    <li key={`${countryModal.name}-${border}`}>
                       <button>{border}</button>
                     </li>
                   )
                 }) ?? <li><p>This country does not border any other country</p></li>
               }
             </ul>
-        </div>
-      </div>
+          </section>
+        </section>
+      </article>
     </>
 
   )

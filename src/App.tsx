@@ -9,9 +9,11 @@ import { type Country } from './types'
 import { Routes, Route } from 'react-router-dom'
 import { CountryModal } from './components/countryModal/CountryModal'
 import { useScrollToTop } from './hooks/useScrollToTop'
+import { originalCountriesContext } from './context/OriginalCountry'
 
 function App (): JSX.Element {
-  const { originalCountries, loading } = useCountries()
+  const { originalCountries } = useContext(originalCountriesContext)
+  const { loading } = useCountries()
   const [countries, setCountries] = useState<Country | null>(originalCountries)
   const { darkMode } = useContext(DarkModeContext)
 
@@ -20,10 +22,10 @@ function App (): JSX.Element {
     <div className={`App ${darkMode ? 'App-Dark' : 'App-Light'}`}>
       <Header/>
       <main>
-        <FilterAndSearchForm setCountries={setCountries} originalCountries={originalCountries}/>
+        <FilterAndSearchForm setCountries={setCountries}/>
         <Routes>
           <Route path='/:country' element={<CountryModal originalCountries={originalCountries}/>}/>
-          <Route path='/' element= {!loading && <CountriesGrid countries={countries} originalCountries={originalCountries}/>}/>
+          <Route path='/' element= {!loading && <CountriesGrid countries={countries}/>}/>
         </Routes>
       </main>
 

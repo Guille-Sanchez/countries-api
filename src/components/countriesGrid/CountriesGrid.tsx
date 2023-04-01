@@ -4,16 +4,13 @@ import './styles.css'
 
 interface Props {
   countries: Country | null
-  originalCountries: Country | null
 }
 
-export const CountriesGrid = ({ countries, originalCountries }: Props): JSX.Element => {
-  const gridCountries = countries !== null ? countries : originalCountries
-
+export const CountriesGrid = ({ countries }: Props): JSX.Element => {
   return (
     <section className='countries-justify'>
       <ul className='countries-container'>
-        <CountryCard gridCountries={gridCountries} />
+        <CountryCard countries={countries} />
       </ul>
     </section>
   )

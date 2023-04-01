@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { originalCountriesContext } from '../context/OriginalCountry'
 import countries from '../mockups/data.json'
-import { type Country } from '../types'
 
 interface returnProps {
-  originalCountries: Country | null
   loading: boolean
 }
 
 export const useCountries = (): returnProps => {
   const [loading, setLoading] = useState(true)
-  const [originalCountries, setOriginalCountries] = useState<Country | null>(null)
+  const { setOriginalCountries } = useContext(originalCountriesContext)
 
   useEffect(() => {
     let subscribed = true
@@ -22,5 +21,5 @@ export const useCountries = (): returnProps => {
     }
   }, [])
 
-  return ({ originalCountries, loading })
+  return ({ loading })
 }

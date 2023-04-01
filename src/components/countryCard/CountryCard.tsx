@@ -3,13 +3,17 @@ import { DarkModeContext } from '../../context/DarkMode'
 import { type Country } from '../../types'
 import './styles.css'
 import { Link } from 'react-router-dom'
+import { originalCountriesContext } from '../../context/OriginalCountry'
 
 interface Props {
-  gridCountries: Country | null
+  countries: Country | null
 }
 
-export const CountryCard = ({ gridCountries }: Props): JSX.Element => {
+export const CountryCard = ({ countries }: Props): JSX.Element => {
   const { darkMode } = useContext(DarkModeContext)
+  const { originalCountries } = useContext(originalCountriesContext)
+  const gridCountries = (countries != null) ? countries : originalCountries
+
   return (
     <>
       {

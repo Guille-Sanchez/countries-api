@@ -6,11 +6,13 @@ import { Routes, Route } from 'react-router-dom'
 import { CountryModal } from './components/countryModal/CountryModal'
 import { useScrollToTop } from './hooks/useScrollToTop'
 import { Homepage } from './components/homepage/Homepage'
+import { useCountries } from './hooks/useCountries'
 
 function App (): JSX.Element {
   const { darkMode } = useContext(DarkModeContext)
 
   useScrollToTop()
+  useCountries()
 
   return (
     <div className={`App ${darkMode ? 'App-Dark' : 'App-Light'}`}>

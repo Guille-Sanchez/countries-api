@@ -4,28 +4,23 @@
   gap: 15px;
 }
 
-@media (min-width: 500px) {
-  .country-information {
-    flex-direction: row;
-  }
-}
-
-@media (min-width: 550px) {
-  .country-information {
-    flex-direction: column;
-  }
-}
-
-@media (min-width: 900px) {
-  .country-information {
-    flex-direction: row;
-  }
-}
-
 .display-in-line p, .display-in-line ul, .display-in-line li{
   display: inline;
 }
 
 .display-in-line {
   margin: 16px 0;
+}
+
+@media (min-width: 500px) {
+  .country-information {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 900px) {
+  .country-information {
+    flex-direction: row;
+    gap: clamp(1rem, -15.176rem + 23.529vw, 6rem);
+  }
 }

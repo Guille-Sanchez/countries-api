@@ -11,7 +11,7 @@ interface Props {
 export const BorderButtons = ({ countryModal }: Props): JSX.Element => {
   const { darkMode } = useContext(DarkModeContext)
   return (
-    <section aria-labelledby='border-countries'>
+    <section aria-labelledby='border-countries' className='border-countries'>
       <header>
         <h3 id='border-countries'>Border Countries:</h3>
       </header>

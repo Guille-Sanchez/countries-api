@@ -1,15 +1,10 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { originalCountriesContext } from '../context/OriginalCountry'
 import { formatCountries } from '../logic/formatCountries'
 import countries from '../mockups/data.json'
 
-interface returnProps {
-  loading: boolean
-}
-
-export const useCountries = (): returnProps => {
-  const [loading, setLoading] = useState(true)
-  const { setOriginalCountries } = useContext(originalCountriesContext)
+export const useCountries = (): void => {
+  const { setOriginalCountries, setLoading } = useContext(originalCountriesContext)
 
   useEffect(() => {
     let subscribed = true
@@ -22,6 +17,4 @@ export const useCountries = (): returnProps => {
       subscribed = false
     }
   }, [])
-
-  return ({ loading })
 }

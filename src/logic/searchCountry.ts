@@ -12,9 +12,10 @@ interface returnProps {
 
 export const searchCountry = ({ country }: Props): returnProps => {
   const { originalCountries } = useContext(originalCountriesContext)
-
   const countryModal = originalCountries?.filter((originalCountry) => {
-    return (originalCountry.name.localeCompare(country, 'en', { sensitivity: 'base' }) === 0)
+    return (originalCountry.name.localeCompare(country, 'en', { sensitivity: 'base' }) === 0 ||
+      originalCountry.name.includes(country)
+    )
   })[0] ?? null
 
   return ({ countryModal })

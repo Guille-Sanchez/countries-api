@@ -1,0 +1,31 @@
+.attribution {
+  width: 100%;
+  padding: 30px var(--lr-padding);
+  text-align: center;
+}
+
+.attribution a {
+ text-decoration: underline;
+}
+
+.attribution a:hover {
+  cursor: pointer;
+ }
+
+.attribution.dark-mode {
+  background-color: var(--very-dark-blue-DM);
+  color: var(--very-Light-Gray);
+ }
+
+ .attribution.dark-mode a {
+  color: var(--very-Light-Gray);
+ }
+
+ .attribution.light-mode {
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+ }
+
+ .attribution.light-mode a {
+  color: var(--very-dark-blue);
+ }

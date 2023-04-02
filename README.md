@@ -41,7 +41,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/Guille-Sanchez/countries-api](https://github.com/Guille-Sanchez/countries-api)
-- Live Site URL: [https://countris-api-chicho.netlify.app/](https://countris-api-chicho.netlify.app/)
+- Live Site URL: [https://countries-api-chicho.netlify.app/](https://countries-api-chicho.netlify.app/)
 
 ## My process
 

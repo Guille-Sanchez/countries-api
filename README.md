@@ -27,12 +27,10 @@ Users should be able to:
 - Toggle the color scheme between light and dark mode *(optional)*
 
 ### Screenshot
-
-### Screenshot
 <div>
-  <div style='display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: 20px;'>
-    <img src='./screenshots/mobile1.png'/>
-    <img src='./screenshots/mobile2.png'/>
+  <div style='display: flex; justify-content: center; width: 100%; gap: 20px;'>
+    <img src='./screenshots/mobile1.png' style='width: 375px; height: auto;'/>
+    <img src='./screenshots/mobile2.png' style='width: 375px; height: auto;'/>
   </div>
 
   <div style='display: flex;; flex-direction: column; justify-content: center; width: 100%; gap: 20px; padding-top: 50px'>
